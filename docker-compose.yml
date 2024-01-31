@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  eks-demo-container:
+    image: eks-demo:1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/eks-demo-container
+    ports:
+      - "8080-8100:8080"
