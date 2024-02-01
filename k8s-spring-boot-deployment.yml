@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jhooq-springboot
+  name: eks-demo-springboot
 spec:
   replicas: 3
   selector:
@@ -13,7 +13,7 @@ spec:
         app: eks-demo-springboot
     spec:
       containers:
-        - name: springboot
+        - name: eks-demo-springboot
           image: ranendasdocker/eks-demo:eks-demo
           ports:
             - containerPort: 8080
@@ -31,4 +31,4 @@ spec:
     - port: 80
       targetPort: 8080
   selector:
-    app: jeks-demohooq-springboot
+    app: eks-demo-springboot
